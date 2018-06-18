@@ -9,6 +9,15 @@
     {% endif %}
 </head>
 <body>
-    
+    <h1> NEWS SOURCES </h1>
+    <ul>
+        {% for news_source in sources %}
+            <li style="list-style-type:none; font: size 24px;"><h3> {{ news_source.name}} </h3></li>
+            <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
+            <a href="/articles/{{ news_source.id }}" class="btn btn-danger">Click Here To Read Articles</a>
+            
+            <hr> 
+        {% endfor %}
+    </ul>
 </body>
 </html>

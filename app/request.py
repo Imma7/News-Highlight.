@@ -28,6 +28,36 @@ def get_source():
 
     return source_results
 
+
+def process_source(source_list):
+    '''
+    Function  that processes the source results and transform them to a list of Objects
+
+    Args:
+        source_list: A list of dictionaries that contain movie details
+
+    Returns :
+        source_results: A list of source objects
+    '''
+    source_results = []
+    for source_item in source_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        category = source_item.get('category')
+        language = source_item.get('language')
+        country = source_item.get('country')
+
+        source_results.append(Source(id, name, description, url, category, language, country))
+
+    return source_results
+
+
+
+
+
+
 def get_articles():
     '''
     Function that gets the json response to our url request
@@ -45,3 +75,4 @@ def get_articles():
             articles_results = process_results(articles_results_list)
 
     return articles_results
+

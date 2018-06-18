@@ -1,0 +1,27 @@
+{% import 'macros.html' as macro %}
+
+    <!--<body>
+        <div class="container">
+            <div class="row">
+                <h2>  </h2>
+                <h3> {{ macro.displayArticleList(articles) }} </h3>
+                <img src="{{articles.urlToImage}}" alt="">
+            </div>
+        </div>
+        
+    </body> -->
+
+    <body>
+        <h1 > ARTICLES </h1>
+        <ul>
+            {% for articles in articles %}
+                <li style="list-style-type:none; font: size 24px;"><h3> {{ articles.title}} </h3></li>
+                <li style="list-style-type:none"><p> {{ articles.description }} </p></li>
+                <li style="list-style-type:none"><img src="{{articles.urlToImage}}" alt="Image"> </li>
+                <li style="list-style-type:none"><p> {{ articles.publishedAt }} by {{ articles.author }} </p></li>
+                <li style="list-style-type:none"><a href="/articles/{{ articles.url }}" class="btn btn-danger">Click Here To Get The Full Story</a> </li>
+                
+                <hr> 
+            {% endfor %}
+        </ul>
+        </body>

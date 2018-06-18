@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title> {{ title }} </title>
-    {% else %}
-    <title> Welcome To Our News Highlights </title>
-    {% endif %}
-</head>
-<body>
-    <h1> NEWS SOURCES </h1>
-    <ul>
-        {% for news_source in sources %}
-            <li style="list-style-type:none; font: size 24px;"><h3> {{ news_source.name}} </h3></li>
-            <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
-            <a href="/articles/{{ news_source.id }}" class="btn btn-danger">Click Here To Read Articles</a>
-            
-            <hr> 
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+
+    <body>
+        <h1> NEWS SOURCES </h1>
+        <ul>
+            {% for news_source in sources %}
+                <li style="list-style-type:none; font: size 24px;"><h3> {{ news_source.name}} </h3></li>
+                <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
+                <a href="/articles/{{ news_source.id }}" class="btn btn-danger">Click Here To Read Articles</a>
+                
+                <hr> 
+            {% endfor %}
+        </ul>
+    </body>
+
+{% endblock %}

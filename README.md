@@ -40,7 +40,8 @@ Then afterwards, packages can be installed by running this commmand
 ```(virtual) <path>$./start.sh ```
 + Then open the browser at the specified url.
 ``` example
-localhost:5000 ```
+localhost:5000 
+```
 
 
 ## Technology Used
